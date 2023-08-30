@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styles!</title>
+    <!-- internal style-->
+    <style>
+      /* selectors - element */
+      h1 {
+        background-color: rgb(236, 76, 19);
+        color: blueviolet;
+      }
+      p {
+        font-style: italic;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 14px;
+        color: green;
+      }
+      /* multiple  */
+      h2,
+      h3,
+      p {
+        background-color: aqua;
+      }
+      /* class selector */
+      .redtext {
+        color: red;
+        background-color: beige;
+      }
+      /*  id selector */
+      #mypara {
+        color: darkblue;
+      }
+
+      h5 {
+        background-color: goldenrod;
+      }
+      div h5 {
+        background-color: deeppink;
+      }
+
+      div > h5 {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- inline styling is not recommended-->
+    <h1 style="background-color: cornflowerblue">Inline style</h1>
+    <!-- color - rgb() , 'crimson' , #fff , #ffffff-->
+    <h1>Welcome Home!</h1>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium,
+      dolorem eos, expedita vel quibusdam excepturi, amet quas hic maxime
+      distinctio iste est dolorum ratione. Dignissimos nulla necessitatibus
+      dolore officia fuga!
+    </p>
+
+    <h2>HEllo there!</h2>
+
+    <h3>What color?</h3>
+
+    <h4 class="redtext">What color is the text</h4>
+
+    <p class="redtext" id="mypara">Should be in red</p>
+
+    <h5>What color am I</h5>
+
+    <div>
+      <h5>I am header five!!</h5>
+      <span>
+        Lorem ipsum dolor ss voluptatem exercitationem? Amet magnam nemo saepe
+        cumque.
+      </span>
+    </div>
+
+    <div>
+      <div>
+        <h5>Hello I am in child div</h5>
+        <p>lorem text</p>
+      </div>
+    </div>
+    <div>
+      <span>
+        <h5>color?</h5>
+      </span>
+    </div>
+  </body>
+</html>

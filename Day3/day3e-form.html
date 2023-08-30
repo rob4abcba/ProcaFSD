@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="post">
+      <label for="firstName"> First Name </label>
+      <input type="text" name="firstName" required /> <br />
+
+      <label for="lastName"> Last Name </label>
+      <input type="text" name="lastName" /> <br />
+
+      <label for="myemail"> Email </label>
+      <input type="email" name="myemail" required /> <br />
+
+      <label for="mypassword"> Password </label>
+      <input type="text" name="mypassword" required /> <br />
+
+      <label for="myage"> Age </label>
+      <input type="number" min="18" max="75" /> <br />
+
+      Gender
+      <input type="radio" name="gender" id="Female" />
+      <label for="Female"> Female</label>
+      <input type="radio" name="gender" id="Male" />
+      <label for="Male"> Male</label>
+      <input type="radio" name="gender" id="Other" />
+      <label for="Other"> Other</label>
+      <br />
+      <input type="checkbox" id="terms" required />
+      <label for="terms">Accept Terms </label>
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
