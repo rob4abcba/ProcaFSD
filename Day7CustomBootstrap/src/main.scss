@@ -1,0 +1,22 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+$primary: red;
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+.navbar {
+  z-index: 2; //Keep navbar on top in z-direction.  Don't let cards cover navbar.
+  position: fixed; //Keep navbar on top in y-direction.  Don't let navbar scroll out of view.
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 20px;
+}
+.margintop {
+  height: 20px;
+}
+.margintopbig {
+  height: 50px;
+}
