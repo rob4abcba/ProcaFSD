@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5 bg-light">
+        <div class="card-title border-bottom">
+          <h1 class="p-3">Contact Us</h1>
+        </div>
+        <div class="container col-sm-6">
+          <form>
+            <div class="mb-3">
+              <label for="name1" class="form-label">Name:</label>
+              <input
+                type="name"
+                class="form-control"
+                id="name1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="message1" class="form-label">Message:</label>
+              <textarea class="form-control" id="message1" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-light border">Submit</button>
+          </form>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn text-light main-bg">Login</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
