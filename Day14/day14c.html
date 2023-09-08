@@ -1,5 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- /*
+Hello!
+Create a weather application that fetches information from remote weather server 
+and displays information for that day. here is the link to fetch from -
+
+https://api.openweathermap.org/data/2.5/weather?q=08536&appid=93f26e3c57081a6210de53b8dcfdfea4
+
+Use Async-Await to fetch information from the remote location.
+
+Feel free to get as much detail as possible from the JSON received from server 
+and display it in a format that is understandable by the user.
+
+
+Please create a folder in git-repo and upload the files. 
+Share the link here.
+
+-------------------------
+http://Git Hub link here:
+-------------------------
+Link:- 
+
+
+*/ -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +32,7 @@
         // alert('clicked');
         // alert(document.getElementById('weather').innerText);
 
-        let city = document.getElementById("city").value;
+        let city = document.getElementById("city").value; //MG: arg of getElementByID must be in quotes.
 
         // Fetch the weather details
         let url = `https://api.openweathermap.org/data/2.5/weather?q=manhattan&appid=93f26e3c57081a6210de53b8dcfdfea4`;
@@ -20,17 +43,18 @@
           .then((weather) => {
             return weather.json();
           })
-          .then(displayData);
+          .then(displayData); //MG arg of function in .then is what was returned in previous .then?
 
         // print to console
         // get needed info and display it in div
       }
 
       function displayData(data) {
+        //MG Chose arbitrary name 'data' for thing returned by previous .then return statement?
         console.log(data);
         console.log(data.main.temp_min);
         document.getElementById(
-          "weather"
+          "weather" //MG: arg of getElementByID must be in quotes.
         ).innerHTML = `<h3>Manhattan</h3> MinTemp=${data.main.temp_min} MaxTemp=${data.main.temp_max}`;
       }
     </script>
