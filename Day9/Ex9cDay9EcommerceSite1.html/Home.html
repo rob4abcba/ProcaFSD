@@ -179,7 +179,7 @@ Share the GitHub Link. -->
             <button
               type="button"
               class="btn-close"
-              data-bs-dismiss="modal"
+              data-bs-dismiss="btnSave1"
               aria-label="Close"
             ></button>
           </div>
@@ -229,7 +229,7 @@ Share the GitHub Link. -->
             <button
               type="button"
               class="btn btn-secondary"
-              data-bs-dismiss="modal"
+              data-bs-dismiss="btnSave2"
             >
               Close
             </button>
@@ -250,10 +250,16 @@ Share the GitHub Link. -->
                   <!-- <h5 class="modal-title">Login Modal</h5> -->
                   <!-- THE REAL PLACE TO PUT LOGIN MODAL         -->
                   <p class="text-center">Login</p>
-                  <button
+                  <!-- <button
                     type="button"
                     class="btn-close"
                     data-dismiss="modal"
+                    aria-label="Close"
+                  ></button> -->
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
                     aria-label="Close"
                   ></button>
                   <!-- <div class="card-title text-center border-bottom"> -->
@@ -295,9 +301,20 @@ Share the GitHub Link. -->
                   >
                 </div> -->
                 <div class="container text-center">
-                  <button type="submit" class="btn btn-primary text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-primary text-center"
+                    data-bs-dismiss="modal"
+                  >
                     Login
                   </button>
+                  <!-- <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button> -->
                 </div>
               </form>
             </div>
@@ -326,9 +343,16 @@ Share the GitHub Link. -->
         .addEventListener("click", function () {
           modal.show();
         });
-      document.getElementById("btnSave").addEventListener("click", function () {
-        modal.hide();
-      });
+      document
+        .getElementById("btnSave1")
+        .addEventListener("click", function () {
+          modal.hide();
+        });
+      document
+        .getElementById("btnSave2")
+        .addEventListener("click", function () {
+          modal.hide();
+        });
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
