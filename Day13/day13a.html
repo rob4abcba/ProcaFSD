@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+    <script>
+      console.log("welcome");
+      function clickHandler1() {
+        console.log("clicked!!");
+        console.log(document.getElementById("etch1").innerText);
+        console.log(document.getElementById("etch1").innerHTML);
+        document.getElementById("sp").innerHTML = "<b> changed </b>";
+      }
+      function clickHandler2() {
+        //Change span
+        document.getElementById("sp").innerText = " changed";
+      }
+      function clickHandler3() {
+        document.getElementById("etch1").style.backgroundColor = "cyan";
+      }
+      function clickHandler4() {
+        document.getElementById('dee').style
+      }
+      console.log(document.getElementById("etch1"));
+    </script>
+  </head>
+  <body>
+    <h1 id="etch1">Hello there , can you see me</h1>
+    <button onclick="clickHandler()">Click Me</button>
+    <span id="sc">I am being scanned!</span>
+  </body>
+</html>
