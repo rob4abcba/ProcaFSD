@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <script>
+      async function clickHandler() {
+        // alert('clicked');
+        // alert(document.getElementById('weather').innerText);
+
+        // Fetch the weather details
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=manhattan&appid=93f26e3c57081a6210de53b8dcfdfea4`;
+        // let response = await fetch(url);
+        // console.log(response.json());
+
+        await fetch(url)
+          .then((weather) => {
+            return weather.json();
+          })
+          .then(displayData);
+
+        // print to console
+        // get needed info and display it in div
+      }
+
+      function displayData(data) {
+        console.log(data);
+        console.log(data.main.temp_min);
+        document.getElementById(
+          "weather"
+        ).innerHTML = `<h3>Manhattan</h3> MinTemp=${data.main.temp_min} MaxTemp=${data.main.temp_max}`;
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <h1>Weather details below</h1>
+    </div>
+
+    <button onclick="clickHandler()">Click for weather details</button>
+
+    <div id="weather">Details here</div>
+  </body>
+</html>
