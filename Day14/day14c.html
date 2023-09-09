@@ -28,11 +28,12 @@ Link:-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
     <script>
+      let city; //MC: Define city outside function because will need to refer to it outside/after function later.
       async function clickHandler() {
         // alert('clicked');
         // alert(document.getElementById('weather').innerText);
 
-        let city = document.getElementById("city").value; //MG: arg of getElementByID must be in quotes.
+        city = document.getElementById("city").value; //MG: arg of getElementByID must be in quotes.
         console.log(city);
         // Fetch the weather details
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=93f26e3c57081a6210de53b8dcfdfea4`;
@@ -53,12 +54,16 @@ Link:-
         //MG Chose arbitrary name 'data' for thing returned by previous .then return statement?
         console.log(data);
         console.log(data.main.temp_min);
+        let imgurl = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+        console.log(imgurl);
         document.getElementById(
           "weather" //MG: arg of getElementByID must be in quotes.
         ).innerHTML = `<h3>${city}</h3> MinTemp=${
           data.main.temp_min - 273
         }degC MaxTemp=${data.main.temp_max - 273}degC
-              WindSpeed=${data.wind.speed}`;
+              WindSpeed=${data.wind.speed} kmph <br>
+              Weather: ${data.weather[0].main}
+              <img src=${imgurl} alt='weather'`;
       }
     </script>
   </head>
