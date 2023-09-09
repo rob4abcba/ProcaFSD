@@ -55,15 +55,17 @@ Link:-
         console.log(data);
         console.log(data.main.temp_min);
         let imgurl = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
-        console.log(imgurl);
+        let imgurl1 = `https://openweathermap.org/img/wn/10d@2x.png`;
+        let imgurl3 = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+        // console.log(imgur1, imgurl2, imgurl3);
         document.getElementById(
           "weather" //MG: arg of getElementByID must be in quotes.
-        ).innerHTML = `<h3>${city}</h3> MinTemp=${
-          data.main.temp_min - 273
-        }degC MaxTemp=${data.main.temp_max - 273}degC
-              WindSpeed=${data.wind.speed} kmph <br>
-              Weather: ${data.weather[0].main}
-              <img src=${imgurl} alt='weather'`;
+        ).innerHTML = `<h3>${city}</h3> 
+        MinTemp=${Math.floor(data.main.temp_min - 273)}degC <br>
+        MaxTemp=${Math.floor(data.main.temp_max - 273)}degC <br>
+        WindSpeed=${data.wind.speed} kmph <br>
+        Weather: ${data.weather[0].main}
+        <img src=${imgurl} alt='weather'>`;
       }
     </script>
   </head>
