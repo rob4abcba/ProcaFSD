@@ -10,5 +10,8 @@
     "weather, nodejs"
   ],
   "author": "rl",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
 }
