@@ -10,4 +10,4 @@ let MyFunComp = () => {
 
 // 4 create root from div
 let rootnode = ReactDOM.createRoot(document.getElementById("root"));
-rootnode.render([<MyClassComp />, <MyFunComp />]);
+rootnode.render([<MyClassComp />, <MyFunComp />, <MyClassComp />]);

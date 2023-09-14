@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Props</title>
+  </head>
+  <body>
+    <!--********* Props! - send info to the child component from parent -->
+    <!--1 //create root div with an id  -->
+    <div id="root">This will change</div>
+
+    <!-- 2 get react libs -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // 3 babel here
+
+      // let MyHeading = (props)=>{
+      //     return (<h1> Hello , I am  {props.sname} ! My age is {props.age} </h1>);
+      // }
+      // // props
+      // let rootnode = ReactDOM.createRoot(document.getElementById('root'));
+      // rootnode.render(<MyHeading sname= "Jane Doe" age="24"/>);
+
+      let MyHeading = ({ name = "John Doe" }) => {
+        // will get overridden if value is sent
+        return <h1> Hello , I am {name} ! </h1>;
+      };
+      // props
+      let rootnode = ReactDOM.createRoot(document.getElementById("root"));
+      rootnode.render(<MyHeading />); // picks up the default value as name is not sent
+      // rootnode.render(<MyHeading name="Jane Doe"/>);
+    </script>
+  </body>
+</html>
