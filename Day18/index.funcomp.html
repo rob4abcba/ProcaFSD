@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>funcomp</title>
+  </head>
+  <body>
+    <!--1 //create root div with an id  -->
+    <div id="root">This will change</div>
+
+    <!-- 2 get react libs -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+              // 3 babel here
+let MyFunComp = () => {
+            return (
+                <h1>Hello from Functional Component</h1>
+            );
+        }
+    </script>
+
+
+      // 4 create root from div
+      let rootnode = ReactDOM.createRoot(document.getElementById("root"));
+      console.log("hello there");
+      // 5 create the element
+      let Myelem = <h1 style={{ color: "blue" }}> Hello There! </h1>;
+      console.log("hello after myelem");
+      //6 render the newly created element to the root node
+      <!-- rootnode.render(Myelem); -->
+      rootnode.render(<MyClassComp/>)
+      console.log("hello after render");
+    </script>
+  </body>
+</html>
