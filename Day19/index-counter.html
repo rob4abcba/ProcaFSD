@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+     <!--1 //create root div with an id  -->
+     <div id="root"> This will change</div>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel"> // 3 babel here
+
+let MyCounter = () => {
+    let {useState} = React;
+
+    // let count =0;
+    let [count,setCount] = useState(0);
+
+    let clickHandler=() => {
+        console.log('clicked , count is'+count);
+        count++;
+        setCount(count);
+        console.log('new count is'+count);
+    }
+
+    return(
+        <>
+        <h1> Counter check </h1>
+       <h3>  count is {count} </h3>
+       <button onClick={clickHandler}> Click to increment </button>
+        </>
+    );
+}
+let root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<MyCounter/>);
+</script>
+   
+    </body>
+    </html>

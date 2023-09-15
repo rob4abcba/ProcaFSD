@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Component - props</title>
+</head>
+<body>
+    <div id="root">This will change</div>
+    <script>
+        class MyClassComp extends React.Component{
+            constructor(props) {
+                super();
+                console.log(props);
+            }
+        render(){
+            return (
+                <h1>Hello from Class Component. This is {this.props.sname}</h1>
+            )
+        }
+    }
+    let root = ReactDOM.createRoot(document.getElementById('root'))
+    root.render(<MyClassComp sname="procareer" age={24} />);
+    </script>
+    </body>
+</body>
+</html>

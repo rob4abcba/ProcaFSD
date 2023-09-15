@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifeCycle of Class Component</title>
+  </head>
+  <body>
+    <!--1 //create root div with an id  -->
+    <div id="root">This will change</div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // 3 babel here
+
+      //Class Component with lifecycle methods
+      class MyClassLifeCycle extends React.Component {
+        constructor(props) {
+          // 1. first time before render and before componentWillMount
+          super(props);
+          console.log(" In constructor");
+          this.state = { city: "LA" };
+        }
+
+        componentWillMount() {
+          // 2. called just before render is called for this first time
+          console.log("In component will mount");
+        }
+
+        clickHandler() {
+          //5. called on clicking the button. And state gets changed here
+          console.log(" in click handler");
+          this.setState({ city: "NYC" }); //changing the state here
+        }
+
+        shouldComponentUpdate() {
+          // 6. Called after state change , mjust return true to proceed
+          console.log(" Should component update");
+          return true; //important
+        }
+
+        componentWillUpdate() {
+          // 7. called after shouldComponentUpdate returns true
+          console.log("in component WILL update");
+        }
+
+        render() {
+          // 3. Renders the component , // 8. Re-render with the latest state variables
+          console.log("in render function");
+          return (
+            <>
+              <h1>
+                {" "}
+                lifecycle method - {this.props.sname}. State is{" "}
+                {this.state.city}
+              </h1>
+              <button onClick={this.clickHandler.bind(this)}>
+                {" "}
+                click me change state{" "}
+              </button>
+            </>
+          );
+        }
+
+        componentDidMount() {
+          //4. Called after first render
+          console.log("in Component Did Mount function");
+        }
+
+        componentDidUpdate() {
+          // 9. called after non-first re-render
+          console.log("in component DID update");
+        }
+
+        componentWillUnmount() {
+          console.log(" in component unmount");
+        }
+      }
+
+      let root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<MyClassLifeCycle sname="sp" />);
+    </script>
+  </body>
+</html>
