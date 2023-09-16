@@ -1,9 +1,13 @@
 class MyClassComp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isOn: true };
+  }
   render() {
-    return <h1> Hello from Class </h1>;
+    return <h1>Hello {this.props.nameprop} from Class component</h1>;
   }
 }
-let MyFunComp = () => {
+let MyFunComp = ({ nameprop }) => {
   let { useState } = React;
   // the initial value is given in useState
   let [name, setName] = useState("Jane Doe");
@@ -20,7 +24,7 @@ let MyFunComp = () => {
     <>
       <h1 style={{ color: color }}>
         {" "}
-        Hello {name} from functional component. Color is {color}
+        Hello {nameprop} and {name} from Functional component. Color is {color}
       </h1>
       <button onClick={clickHandler}>
         {" "}
@@ -32,4 +36,7 @@ let MyFunComp = () => {
 };
 
 let rootnode = ReactDOM.createRoot(document.getElementById("root"));
-rootnode.render([<MyClassComp />, <MyFunComp />]);
+rootnode.render([
+  <MyClassComp nameprop="Class Doe" />,
+  <MyFunComp nameprop="Function Doe" />,
+]);
