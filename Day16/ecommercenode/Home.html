@@ -168,7 +168,6 @@ Share the GitHub Link. -->
       </p>
       <img src="BuyBestLogo.PNG" alt="Buy Best Logo" aria="Buy Best Logo" />
     </div>
-    <!-- <button id="btnShow2" type="button" class="btn btn-primary">Modal</button> -->
     <div class="modal fade" tabindex="-1" id="testModal">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -225,21 +224,10 @@ Share the GitHub Link. -->
     <script>
       const container = document.getElementById("testModal");
       const modal = new bootstrap.Modal(container);
-
       document
         .getElementById("btnShow1")
         .addEventListener("click", function () {
           modal.show();
-        });
-      document
-        .getElementById("btnSave1")
-        .addEventListener("click", function () {
-          modal.hide();
-        });
-      document
-        .getElementById("btnSave2")
-        .addEventListener("click", function () {
-          modal.hide();
         });
     </script>
     <script
