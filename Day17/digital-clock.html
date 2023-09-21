@@ -3,15 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Digital Clock</title>
+    <!-- Add links to stylesheet and icons -->
+    <!-- Add CDN links for Bootstrap5 -->
   </head>
   <body>
-    <div id="innerdiv">This should change - inner html</div>
-    <div id="reactdiv">This should change - react div</div>
+    <div id="vanilla">This should change - html</div>
+    <div id="reactdiv">This should change - react</div>
     <script>
         let renderThis = () => {
             let str = `<h2>Vanilla JS</h2><input/><br>Current DateTime is ${new Date()}<hr>
-      document.getElementById('innerdiv').innerHTML = str;
+      document.getElementById('vanilla').innerHTML = str;
 
       //React
       let MyReactComp = React.createElement('div')
