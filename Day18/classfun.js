@@ -1,6 +1,6 @@
 class MyClassComp extends React.Component {
   render() {
-    return <h1> Hello from Class </h1>;
+    return <h1> Hello from Class Component</h1>;
   }
 }
 
