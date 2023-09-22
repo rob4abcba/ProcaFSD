@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Props</title>
+  </head>
+  <body>
+    <!--********* Props! - send info to the child component from parent -->
+    <!--1 //create root div with an id  -->
+    <div id="root">This will change</div>
+
+    <!-- 2 get react libs -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // 3 babel here
+
+      // let MyHeading = (props)=>{
+      //     return (<h1> Hello , I am  {props.sname} ! My age is {props.age} </h1>);
+      // }
+      // // props
+      // let rootnode = ReactDOM.createRoot(document.getElementById('root'));
+      // rootnode.render(<MyHeading sname= "Jane Doe" age="24"/>);
+
+      // let MyHeading = ({name="John Doe"})=>{ // will get overridden if value is sent
+      //     return (<h1> Hello , I am  {name} ! </h1>);
+      // }
+      // // props
+      // let rootnode = ReactDOM.createRoot(document.getElementById('root'));
+      // rootnode.render(<MyHeading/>); // picks up the default value as name is not sent
+      // // rootnode.render(<MyHeading name="Jane Doe"/>);
+
+      //number as props
+      // let MyHeading = (props)=>{ // will get overridden if value is sent
+      //     return (<h1> Hello , I am  {props.name} ! I am {props.age +15} years old</h1>);
+      // }
+      // // props as number
+      // let rootnode = ReactDOM.createRoot(document.getElementById('root'));
+      // rootnode.render(<MyHeading name="Jane Doe" age={24} />);
+
+      //props as float
+      // let MyHeading = (props)=>{ // will get overridden if value is sent
+      //     return (<h1> Hello , I am  {props.name} ! I am {props.age} years old. My weight is {props.weight}</h1>);
+      // }
+      // let rootnode = ReactDOM.createRoot(document.getElementById('root'));
+      // rootnode.render(<MyHeading name="Jane Doe" age={24} weight={70.5}/>);
+
+      //props as array
+      // let MyHeading = (props)=>{ // will get overridden if value is sent
+      //     return (<div>
+      //             <h1> Hello , I am  {props.name} ! I am {props.age} years old.
+      //             My weight is {props.weight}
+      //              </h1>
+      //                 <h2>My aliases are - {`${props.alias[0]} , ${props.alias[1]} ,
+      //                 ${props.alias[2]} ${props.alias[3]}`}
+      //                 </h2>
+
+      //             </div>
+      //         );
+      // }
+      // let arr = ['Mrs Doe','Mom of Ben','Ms Doe','daughter of Mr.C'];
+      // let rootnode = ReactDOM.createRoot(document.getElementById('root'));
+      // // rootnode.render(<MyHeading name="Jane Doe" age={24} weight={70.5}
+      // //                 alias={['Mrs Doe','Mom of Ben','Ms Doe']} /> );
+      //                 rootnode.render(<MyHeading name="Jane Doe" age={24} weight={70.5}
+      //                 alias={arr} /> );
+
+      //props as object
+
+      // let MyHeading = (props)=>{
+      //     return (<div>
+      //             <h1> Hello , I am  {props.name} ! I am {props.age} years old.
+      //             My weight is {props.weight}
+      //              </h1>
+      //                 <h2>My aliases are - {`${props.alias[0]} , ${props.alias[1]} ,
+      //                 ${props.alias[2]} ${props.alias[3]}`}
+      //                 </h2>
+      //                 <h2>
+      //                     Science: {props.marks.science} , Math:{props.marks.math},
+      //                     English:{props.marks.english}
+      //                 </h2>
+      //             </div>
+      //         );
+      // }
+      // let arr = ['Mrs Doe','Mom of Ben','Ms Doe','daughter of Mr.C'];
+      // let obj ={'science':100,'math':100,"english":90};
+      // let rootnode = ReactDOM.createRoot(document.getElementById('root'));
+      // // rootnode.render(<MyHeading name="Jane Doe" age={24} weight={70.5}
+      // //                 alias={['Mrs Doe','Mom of Ben','Ms Doe']} /> );
+      //                 rootnode.render(<MyHeading name="Jane Doe" age={24} weight={70.5}
+      //                 alias={arr} marks={obj} /> );
+
+      // Note the default value for age in return
+      // let MyHeading = (props)=>{
+      //     return (<div>
+      //                 <h1> Hello , I am  {props.name} ! I am {props.age || 18} years old.
+      //                     My weight is {props.weight}
+      //                 </h1>
+      //                 <h2>My aliases are - {`${props.alias[0]} , ${props.alias[1]} ,
+      //                 ${props.alias[2]} ${props.alias[3]}`}
+      //                 </h2>
+      //                 <h2>
+      //                     Science: {props.marks.science} , Math: {props.marks.math},
+      //                     English: {props.marks.english}
+      //                 </h2>
+      //                 </div>);
+      //             }
+
+      // let arr = ['Mrs Doe','Mom of Ben','Ms Doe','daughter of Mr.C'];
+      // let obj ={'science':100,'math':100,"english":90};
+      // let rootnode = ReactDOM.createRoot(document.getElementById('root'));
+      //                 rootnode.render(<MyHeading name="Jane Doe" weight={70.5}
+      //                 alias={arr} marks={obj} /> );
+
+      //obj destructuring
+      // let MyHeading = ({name,meal})=>{
+      //     return (<div>
+      //             <h1> Hello , I am  {name} !
+      //              </h1>
+      //                 <h2> I like {meal.soup}  soup , I like {meal.main} for
+      //                     main course and for my dessert I'd like a {meal.dessert}
+      //                 </h2>
+      //             </div>
+      //         );
+      // }
+
+      // let arr = ['Mrs Doe','Mom of Ben','Ms Doe','daughter of Mr.C'];
+      // let obj ={'science':100,'math':100,"english":90};
+      // let meal ={'soup':'hotnsour','main':'quiche combo','dessert':'pie'};
+      // let rootnode = ReactDOM.createRoot(document.getElementById('root'));
+      //                 rootnode.render(<MyHeading name="Jane Doe" age={24} weight={70.5}
+      //                 alias={arr} marks={obj} meal={meal} /> );
+
+      //destructuring again
+      // let MyHeading = (props)=>{
+
+      //  let {name,age,meal} = props;
+
+      //     return (<div>
+      //             <h1> Hello , I am  {name} !  I am {age} years old
+      //              </h1>
+      //                 <h2> I like {meal.soup}  soup , I like {meal.main} for
+      //                     main course and for my dessert I'd like a {meal.dessert}
+      //                 </h2>
+      //             </div>
+      //         );
+      // }
+      // let arr = ['Mrs Doe','Mom of Ben','Ms Doe','daughter of Mr.C'];
+      // let obj ={'science':100,'math':100,"english":90};
+      // let meal ={'soup':'hotnsour','main':'quiche combo','dessert':'pie'};
+      // let rootnode = ReactDOM.createRoot(document.getElementById('root'));
+      //                 rootnode.render(<MyHeading name="Jane Doe" age={24} weight={70.5}
+      //                 alias={arr} marks={obj} meal={meal} /> );
+
+      // function as props
+      let MyHeading = (props) => {
+        return (
+          <div>
+            <h1> Hello , prop function check. </h1>
+            <button onClick={props.clickHandler}> click me </button>
+          </div>
+        );
+      };
+
+      let parentClickHandler = () => {
+        alert("clicked ! I am from parent!");
+        console.log("clicked ! I am from parent!");
+      };
+
+      let rootnode = ReactDOM.createRoot(document.getElementById("root"));
+      rootnode.render(<MyHeading clickHandler={parentClickHandler} />);
+    </script>
+  </body>
+</html>
