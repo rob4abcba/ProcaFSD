@@ -25,15 +25,34 @@ const SignupFormCheck = () => {
     <>
       {/* Form to understand onblur and state change */}
       {/* Synthetic event e */}
-      UserName is {formObj.username} <br></br>
+      <br></br>
+      <br></br> <br></br> <br></br>
+      <h1>SignupFormCheck.js</h1>
+      UserName is {formObj.username}
+      <br></br>
       Email is {formObj.email}
+      <br></br>
       Phone is {formObj.phone}
+      <br></br>
       Age is {formObj.age}
+      <br></br>
       <form>
-        <input name="username" onChange={(e) => formHandler(e)} />
-        <input name="email" onChange={(e) => formHandler(e)} />
-        <input name="phone" onChange={(e) => formHandler(e)} />
-        <input name="age" onChange={(e) => formHandler(e)} />
+        <input
+          name="username"
+          placeholder="username"
+          onChange={(e) => formHandler(e)}
+        />
+        <input
+          name="email"
+          placeholder="email"
+          onChange={(e) => formHandler(e)}
+        />
+        <input
+          name="phone"
+          placeholder="phone"
+          onChange={(e) => formHandler(e)}
+        />
+        <input name="age" placeholder="age" onChange={(e) => formHandler(e)} />
         <button onClick={(e) => submitHandler(e)}> Submit</button>
       </form>
       <br></br>
