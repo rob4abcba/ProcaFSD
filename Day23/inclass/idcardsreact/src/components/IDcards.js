@@ -1,11 +1,19 @@
 import IDcard from "./IDcard";
+import Data from "../Data.json";
 
-const IDcards = () => {
+function IDCards() {
+  //console.log(Data.data);
+
   return (
     <>
-      <IDcard />
+      <h1>ID Cards</h1>
+      {Data.data.map((elm) => {
+        return (
+          <IDcard key={elm.id} name={elm.name} age={elm.age} des={elm.des} />
+        );
+      })}
     </>
   );
-};
+}
 
-export default IDcards;
+export default IDCards;
