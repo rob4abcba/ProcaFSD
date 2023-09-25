@@ -1,10 +1,10 @@
 import "./App.css";
-import IDcards from "./components/IDcards";
+import IDCards from "./components/IDCards";
 
 function App() {
   return (
     <div>
-      <IDcards />
+      <IDCards />
     </div>
   );
 }
