@@ -1,5 +1,5 @@
 import "./App.css";
-import IDcards from "./components/IDcards";
+import IDCards from "./components/IDCards";
 import StateCheck from "./components/StateCheck";
 import SignupFormCheck from "./components/SignupFormCheck";
 
