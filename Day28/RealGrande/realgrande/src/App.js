@@ -23,7 +23,7 @@ function App() {
       //write the data to the state so we can use it anywhere in the component
     };
     fetchData();
-  }, [housesData]);
+  }, []);
 
   return (
     <div className="container-fluid">
