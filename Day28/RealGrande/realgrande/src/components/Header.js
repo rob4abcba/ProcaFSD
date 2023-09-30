@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="row bg-warning d-flex align-items-center">
       <div className="col-sm-3">
-        <img className="logo" src="/imgs/logo.png" alt="logo here" />
+        <Link to="/">
+          {" "}
+          <img className="logo" src="/imgs/logo.png" alt="logo here" />{" "}
+        </Link>
       </div>
       <div className="col-sm-5">
         <p className="m-0 tagline"> Your real estate destination!</p>
