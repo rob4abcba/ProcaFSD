@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 const SearchFilter = (props) => {
   let navigate = useNavigate();
+
   console.log(props);
   // array of distinct counties
   let arr = props.houses.map((elem) => elem.county);
@@ -13,9 +14,9 @@ const SearchFilter = (props) => {
   let changeHandler = (e) => {
     // synthetic event
     console.log("selected!" + e.target.value);
-    // After we get the target county, we show the user a new screen with a list of houses from that county.
-    // We shall call that new component the SearchResults.js component, which filters through the
-    // array of house objects and get the house objects that belong to the selected county.
+    // one SearchResults component that does -
+    // filter through the array of house objects and
+    // get those house objects that belong to selected county
     navigate(`/searchresults/${e.target.value}`);
   };
 
