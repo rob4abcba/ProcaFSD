@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import SearchFilter from "./components/SearchFilter";
 import SearchResults from "./components/SearchResults";
+import SearchedHouse from "./components/SearchedHouse";
+import SignUp from "./components/SignUp";
+import Login from "./components/Login";
 
 function App() {
   let [housesData, setHousesData] = useState([]);
@@ -37,6 +40,12 @@ function App() {
           path="searchresults/:county"
           element={<SearchResults houses={housesData} />}
         />
+        <Route
+          path="searchedHouse/:id"
+          element={<SearchedHouse houses={housesData} />}
+        />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </div>
