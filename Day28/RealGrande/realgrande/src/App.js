@@ -1,10 +1,12 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import House from "./components/House";
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import SearchFilter from "./components/SearchFilter";
+import SearchResults from "./components/SearchResults";
 
 function App() {
   let [housesData, setHousesData] = useState([]);
@@ -29,8 +31,14 @@ function App() {
     <div className="container-fluid">
       <Header />
       <SearchFilter houses={housesData} />
-      <House houseinfo={housesData[1]} />
-      {/* <Footer/> */}
+      <Routes>
+        <Route path="/" element={<House houseinfo={housesData[1]} />} />
+        <Route
+          path="searchresults/:county"
+          element={<SearchResults houses={housesData} />}
+        />
+      </Routes>
+      <Footer />
     </div>
   );
 }
