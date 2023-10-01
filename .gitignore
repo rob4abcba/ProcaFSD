@@ -4,6 +4,8 @@
 
 # Ignore node_modules and its child directories
 node_modules/
+# MG Ignore node_modules that original in child directories
+**/node_modules
 
 # Ignore Logs
 logs
