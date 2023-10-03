@@ -8,15 +8,15 @@ const SearchResults = (props) => {
   // filter through the array of house objects and
   // get those house objects that belong to selected county
   //iterate and show details
-  console.log(props);
+  console.log("SearchResults.js: props =", props);
   //get county name from params
   const paramsObj = useParams();
-  console.log(paramsObj);
+  console.log("SearchResults.js: paramsObj =", paramsObj);
   //filter and get an array
   let filteredHousesArray = props.houses.filter(
     (elem) => elem.county == paramsObj.county
   );
-  console.log(filteredHousesArray);
+  console.log("SearchResults.js: filteredHousesArray =", filteredHousesArray);
 
   return (
     <div className="row">
@@ -32,7 +32,8 @@ const SearchResults = (props) => {
           </thead>
           <tbody>
             {filteredHousesArray.map((elem) => {
-              return <SearchResultsRow house={elem} />;
+              // return <SearchResultsRow house={elem} />;
+              return <SearchResultsRow key={elem._id} house={elem} />;
             })}
           </tbody>
         </table>

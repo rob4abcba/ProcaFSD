@@ -3,8 +3,8 @@ import House from "./House";
 
 const SearchedHouse = (props) => {
   let paramObj = useParams();
-  console.log(paramObj); //has he house id
-  console.log(props);
+  console.log("SearchedHouse.js: paramObj =", paramObj); //has he house id
+  console.log("SearchedHouse.js: props =", props);
 
   //this returns single object
   let searchedHouseObj = props.houses.find((house) => house._id == paramObj.id);

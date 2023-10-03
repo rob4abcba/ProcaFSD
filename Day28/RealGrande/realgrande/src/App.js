@@ -34,7 +34,7 @@ function App() {
     // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
-  const rndInt = randomIntFromInterval(1, 9);
+  const rndInt = randomIntFromInterval(0, 9);
   console.log("rndInt =", rndInt);
   let homePageHouseObj = housesData[rndInt];
   console.log("homePageHouseObj =", homePageHouseObj);

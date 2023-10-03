@@ -4,7 +4,10 @@ const SearchResultsRow = (props) => {
   const navigate = useNavigate();
 
   let clickHandler = () => {
-    console.log("clicked!");
+    console.log(
+      "SearchResultsRow.js: You clicked props.house._id =",
+      props.house._id
+    );
     navigate("/searchedHouse/" + props.house._id);
   };
 
