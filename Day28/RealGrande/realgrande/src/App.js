@@ -30,12 +30,22 @@ function App() {
     fetchData();
   }, []);
 
+  function randomIntFromInterval(min, max) {
+    // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+  const rndInt = randomIntFromInterval(1, 9);
+  console.log("rndInt =", rndInt);
+  let homePageHouseObj = housesData[rndInt];
+  console.log("homePageHouseObj =", homePageHouseObj);
+
   return (
     <div className="container-fluid">
       <Header />
       <SearchFilter houses={housesData} />
       <Routes>
-        <Route path="/" element={<House houseinfo={housesData[1]} />} />
+        {/* <Route path="/" element={<House houseinfo={housesData[rndInt]} />} /> */}
+        <Route path="/" element={<House houseinfo={homePageHouseObj} />} />
         <Route
           path="searchresults/:county"
           element={<SearchResults houses={housesData} />}
@@ -47,7 +57,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
