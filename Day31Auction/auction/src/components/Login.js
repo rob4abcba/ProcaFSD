@@ -17,7 +17,7 @@ const Login = () => {
             />
             <small id="helpId" class="text-muted">
               {" "}
-              your email address
+              your email
             </small>
           </div>
 

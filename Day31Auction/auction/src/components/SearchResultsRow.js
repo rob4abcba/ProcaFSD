@@ -5,14 +5,14 @@ const SearchResultsRow = (props) => {
 
   let clickHandler = () => {
     console.log("clicked!");
-    navigate("/searchedHouse/" + props.house._id);
+    navigate("/searchedAuctionItem/" + props.AuctionItem._id);
   };
 
   return (
-    <tr key={props.house._id} onClick={clickHandler}>
-      <td scope="row">{props.house.address}</td>
-      <td>{props.house.price}</td>
-      {/* <td>{props.house.description}</td> */}
+    <tr key={props.AuctionItem._id} onClick={clickHandler}>
+      <td scope="row">{props.AuctionItem.title}</td>
+      <td>{props.AuctionItem.startbid}</td>
+      {/* <td>{props.AuctionItem.description}</td> */}
     </tr>
   );
 };

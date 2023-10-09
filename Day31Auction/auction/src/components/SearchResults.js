@@ -5,34 +5,34 @@ import SearchResultsRow from "./SearchResultsRow";
 const SearchResults = (props) => {
   // let [] = useState([]);
   //  SearchResults component that does -
-  // filter through the array of house objects and
-  // get those house objects that belong to selected county
+  // filter through the array of AuctionItem objects and
+  // get those AuctionItem objects that belong to selected category
   //iterate and show details
   console.log(props);
-  //get county name from params
+  //get category name from params
   const paramsObj = useParams();
   console.log(paramsObj);
   //filter and get an array
-  let filteredHousesArray = props.houses.filter(
-    (elem) => elem.county == paramsObj.county
+  let filteredAuctionItemsArray = props.AuctionItems.filter(
+    (elem) => elem.category == paramsObj.category
   );
-  console.log(filteredHousesArray);
+  console.log(filteredAuctionItemsArray);
 
   return (
     <div className="row">
-      <h4>Search results for houses in : {paramsObj.county} </h4>
+      <h4>Search results for AuctionItems in : {paramsObj.category} </h4>
       <div className="table-responsive">
         <table className="table table-primary table-hover">
           <thead>
             <tr>
-              <th scope="col">Address</th>
-              <th scope="col">Price</th>
+              <th scope="col">title</th>
+              <th scope="col">startbid</th>
               {/* <th scope="col">Description</th> */}
             </tr>
           </thead>
           <tbody>
-            {filteredHousesArray.map((elem) => {
-              return <SearchResultsRow house={elem} />;
+            {filteredAuctionItemsArray.map((elem) => {
+              return <SearchResultsRow AuctionItem={elem} />;
             })}
           </tbody>
         </table>
