@@ -11,7 +11,8 @@ const port = 3000;
 const db = (module.exports = () => {
   try {
     mongoose.connect(
-      "mongodb+srv://nagireddy.h1bcq2e.mongodb.net/FSDCourse?retryWrites=true&w=majority",
+      // "mongodb+srv://nagireddy.h1bcq2e.mongodb.net/FSDCourse?retryWrites=true&w=majority",
+      "mongodb+srv://rbcluster0.vxwq6pg.mongodb.net/?retryWrites=true&w=majority",
       {
         user: process.env.DBUSERNAME,
         pass: process.env.DBPASSWORD,
@@ -26,6 +27,8 @@ const db = (module.exports = () => {
   }
 });
 db();
+
+// mongodb+srv://rob4software:<password>@rbcluster0.vxwq6pg.mongodb.net/?retryWrites=true&w=majority
 
 app.use("/", (req, res, next) => {
   console.log("A new request received at " + new Date(Date.now()));
