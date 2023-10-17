@@ -1,12 +1,17 @@
 const express = require("express");
 
+const exampleRoutes = require("./routes/sampleroutes");
 const app = express();
 const port = 3000;
 
-// app.use("/", (req, res, next) => {
-//   console.log("A new request received at " + new Date(Date.now()));
-// });
+app.use("/", (req, res, next) => {
+  console.log("A new request received at " + new Date(Date.now()));
+  next();
+});
 
+app.use("/", exampleRoutes);
+
+// Moved app.get, post, put, and delete to separate /routes/sampleroutes.js
 // app.get("/", (req, res) => {
 //   res.send("index.js: another app.get");
 // });
