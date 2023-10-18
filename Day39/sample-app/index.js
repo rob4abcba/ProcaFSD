@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const exampleRoutes = require("./routes/sampleroutes");
+const studentRouter = require("./routes/studentRoutes");
 
 const app = express();
 const port = 3000;
@@ -13,7 +14,8 @@ const db = (module.exports = () => {
   try {
     mongoose.connect(
       // "mongodb+srv://nagireddy.h1bcq2e.mongodb.net/FSDCourse?retryWrites=true&w=majority",
-      "mongodb+srv://rbcluster0.vxwq6pg.mongodb.net/?retryWrites=true&w=majority",
+      // mongodb+srv://rbcluster0.vxwq6pg.mongodb.net/?retryWrites=true&w=majority
+      "mongodb+srv://rbcluster0.vxwq6pg.mongodb.net/FSDCourse?retryWrites=true&w=majority",
       {
         user: process.env.DBUSERNAME,
         pass: process.env.DBPASSWORD,
@@ -37,6 +39,7 @@ app.use("/", (req, res, next) => {
 });
 
 app.use("/", exampleRoutes);
+app.use("/students", studentRouter);
 
 app.listen(port, () => {
   console.log(`sample-app/index.js: Listening at http://localhost:${port}`);
