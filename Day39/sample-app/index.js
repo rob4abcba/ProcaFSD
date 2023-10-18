@@ -5,7 +5,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const exampleRoutes = require("./routes/sampleroutes");
-const studentRouter = require("./routes/studentRoutes");
+// const studentRouter = require("./routes/studentRoutes");
+const { studentRouter, employeeRouter } = require("./routes/studentRoutes");
 
 const app = express();
 const port = 3000;
@@ -40,6 +41,7 @@ app.use("/", (req, res, next) => {
 
 app.use("/", exampleRoutes);
 app.use("/students", studentRouter);
+app.use("/employee", employeeRouter);
 
 app.listen(port, () => {
   console.log(`sample-app/index.js: Listening at http://localhost:${port}`);
