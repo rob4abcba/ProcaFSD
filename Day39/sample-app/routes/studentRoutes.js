@@ -29,7 +29,7 @@ studentRouter.get("/:RollNo", async (request, response) => {
 
 // Get GROUP of students using College //MG: Might need to comment this section out
 studentRouter.get("/college/:College", async (request, response) => {
-  const studentsByCollege = await studentModel.find({
+  const studentsByCollege = await StudentModel.find({
     College: request.params.College,
   });
   try {
@@ -78,7 +78,7 @@ studentRouter.put("/:RollNo", async (request, response) => {
 
 // Get students whose name includes substring //MG: Might need to comment this out
 studentRouter.get("/name/:Substring", async (request, response) => {
-  const studentsByName = await studentModel.find({
+  const studentsByName = await StudentModel.find({
     Name: {
       $regex: request.params.Substring,
       $options: "i",
