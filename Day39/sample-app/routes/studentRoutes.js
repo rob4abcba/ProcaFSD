@@ -76,7 +76,7 @@ studentRouter.put("/:RollNo", async (request, response) => {
   }
 });
 
-/ Get students whose name includes substring //MG: Might need to comment this out
+// Get students whose name includes substring //MG: Might need to comment this out
 studentRouter.get("/name/:Substring", async (request, response) => {
   const studentsByName = await studentModel.find({
     Name: {
@@ -92,7 +92,7 @@ studentRouter.get("/name/:Substring", async (request, response) => {
 });
 
 //Delete student using Roll Number
-app.delete("/:RollNo", async (request, response) => {
+studentRouter.delete("/:RollNo", async (request, response) => {
   const students = await StudentModel.deleteOne({
     RollNo: request.params.RollNo,
   });
