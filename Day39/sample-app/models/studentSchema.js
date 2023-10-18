@@ -1,12 +1,22 @@
 const mongoose = require("mongoose");
 
 const StudentSchema = new mongoose.Schema({
-  _id: mongoose.Types.ObjectId,
   RollNo: Number,
   Name: String,
   College: String,
   Section: String,
 });
 
-const Studentdata = mongoose.model("Student", StudentSchema);
-module.exports = Studentdata;
+const EmpexpSchema = new mongoose.Schema(
+  {
+    Exp: Number,
+    Ename: String,
+  },
+  {
+    collection: "employeeswithexp",
+  }
+);
+
+const StudentModel = mongoose.model("Student", StudentSchema);
+const EmpModel = mongoose.model("employeeswithexp", EmpexpSchema);
+module.exports = { StudentModel, EmpModel };
