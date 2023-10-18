@@ -12,4 +12,14 @@ studentRouter.get("/", async (request, response) => {
   }
 });
 
+// Get SPECIFIC student data using RollNo
+studentRouter.get("/:RollNo", async (request, response) => {
+  const student = await studentModel.find({ RollNo: request.params.RollNo });
+  try {
+    response.send(student);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
 module.exports = studentRouter;
