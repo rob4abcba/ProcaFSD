@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const HouseSchema = new mongoose.Schema({
+  //MQ: Is keyword "new" necessary here?
   _id: Number,
   address: String,
   county: String,

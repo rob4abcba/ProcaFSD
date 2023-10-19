@@ -35,12 +35,12 @@ app.use("/", (req, res, next) => {
   next();
 });
 
-// app.use("/", exampleRoutes);
+// app.use("/", allRoutes);
 // app.use("/students", studentRouter);
 // app.use("/employee", employeeRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(
-    `sample-app/index.js: Listening at http://localhost:${process.env.POR}`
+    `realgrande-server/index.js: Listening at http://localhost:${process.env.PORT}`
   );
 });
