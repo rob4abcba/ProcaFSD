@@ -10,14 +10,51 @@ const HouseSchema = new mongoose.Schema({
 });
 
 const UserSchema = new mongoose.Schema({
-  name: String,
-  address: String,
-  email: String,
-  password: String,
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
   gender: {
     type: String,
     enum: ["Male", "Female", "Rather Not to Say"],
     default: "Rather Not to Say",
   },
-  type: customer | realtor,
+  role: {
+    type: String,
+    enum: ["customer", "realtor"],
+    default: "customer",
+  },
 });
+
+const EnquirySchema = new mongoose.Schema({
+  ename: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  remarks: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+const Houses = mongoose.model("House", HouseSchema);
+const Users = mongoose.model("User", UserSchema);
+const Enquiries = mongoose.model("Enquiry", EnquirySchema);
+
+module.exports = { Houses, Users, Enquiries };
