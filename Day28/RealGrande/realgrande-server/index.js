@@ -35,7 +35,7 @@ app.use("/", (req, res, next) => {
   next();
 });
 
-app.use("/", exampleRoutes);
+// app.use("/", exampleRoutes);
 // app.use("/students", studentRouter);
 // app.use("/employee", employeeRouter);
 
