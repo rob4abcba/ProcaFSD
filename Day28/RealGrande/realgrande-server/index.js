@@ -3,16 +3,12 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
-// // const studentRouter = require("./routes/studentRoutes");
-// const { studentRouter, employeeRouter } = require("./routes/studentRoutes");
-
 const app = express();
-// const port = 3000;
 
 const db = (module.exports = () => {
   try {
     mongoose.connect(
-      "mongodb+srv://rbcluster0.vxwq6pg.mongodb.net/realgrande?retryWrites=true&w=majority",
+      "mongodb+srv://nagireddy.h1bcq2e.mongodb.net/realgrande?retryWrites=true&w=majority",
       {
         user: process.env.DBUSERNAME,
         pass: process.env.DBPASSWORD,
@@ -20,27 +16,19 @@ const db = (module.exports = () => {
         useUnifiedTopology: true,
       }
     );
-    console.log("MongoDB Connection SUCCESSFUL");
+    console.log("MongoDB Connection is Successful");
   } catch (error) {
     console.log(error);
-    console.log("MongoDB Connection FAILED");
+    console.log("MongoDB Connection is failed");
   }
 });
 db();
-
-// mongodb+srv://rob4software:<password>@rbcluster0.vxwq6pg.mongodb.net/?retryWrites=true&w=majority
 
 app.use("/", (req, res, next) => {
   console.log("A new request received at " + new Date(Date.now()));
   next();
 });
 
-// app.use("/", allRoutes);
-// app.use("/students", studentRouter);
-// app.use("/employee", employeeRouter);
-
 app.listen(process.env.PORT, () => {
-  console.log(
-    `realgrande-server/index.js: Listening at http://localhost:${process.env.PORT}`
-  );
+  console.log(`Example app listening at http://localhost:${process.env.PORT}`);
 });

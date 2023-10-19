@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
-const HouseSchema = new mongoose.Schema({
-  //MQ: Is keyword "new" necessary here?
+const HouseSchema = mongoose.Schema({
   _id: Number,
   address: String,
   county: String,
@@ -10,7 +9,7 @@ const HouseSchema = new mongoose.Schema({
   photo: String,
 });
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -35,7 +34,7 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const EnquirySchema = new mongoose.Schema({
+const EnquirySchema = mongoose.Schema({
   ename: {
     type: String,
     required: true,
