@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const allRouter = require("./routes/allRoutes");
 dotenv.config();
 
 const app = express();
@@ -8,7 +9,7 @@ const app = express();
 const db = (module.exports = () => {
   try {
     mongoose.connect(
-      "mongodb+srv://nagireddy.h1bcq2e.mongodb.net/realgrande?retryWrites=true&w=majority",
+      "mongodb+srv://rbcluster0.vxwq6pg.mongodb.net/realgrande?retryWrites=true&w=majority",
       {
         user: process.env.DBUSERNAME,
         pass: process.env.DBPASSWORD,
@@ -28,6 +29,8 @@ app.use("/", (req, res, next) => {
   console.log("A new request received at " + new Date(Date.now()));
   next();
 });
+
+app.use("/", allRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening at http://localhost:${process.env.PORT}`);
